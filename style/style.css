@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+
+/*
+body {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header"
+        "main main"
+        "footer footer";
+
+}
+*/
+
+/*header {
+    grid-area: header;
+/*    background: #808080;*/
+/*    position: sticky;*/
+/*    opacity: 0.5;*/
+/*
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+*/
+
+.productlist > section {
+    display: grid;
+    max-width: 1300px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 50px;
+    padding-top: 50px;
+}
+
+.productlist > section > h1 {
+    grid-column: 1/-1;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header {
+    display: grid;
+    max-width: 1300px;
+    margin: auto;
+    grid-column: 1/-1;
+    text-align: center;
+    font-family: 'Manjari', sans-serif;
+    background: #808080;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    display: grid;
+    max-width: 1300px;
+    margin: auto;
+    background: #808080;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: 'Manjari', sans-serif;
+    text-align: center;
+    grid-column: 1/-1;
+}
+
+
+main {
+
+    padding: 50px;
+    font-family: 'Manjari', sans-serif;
+    position: relative;
+    grid-area: main;
+
+}
+
+
+
+main:after {
+    content: "";
+    background-image: url(../images/bg.jpg);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+
+}
+
+
+img {
+    width: 250px;
+    height: auto;
+
+}
+
+.dish {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+
+
+li {
+    list-style-type: none;
+    display: inline-grid;
+
+    font-family: 'Manjari', sans-serif;
+
+    margin: 10px;
+
+
+
+}
+
+
+#more {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.discount {
+    color: red;
+    font-size: 1.4em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hide {
+  display: none;
+}
+.modal-background {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #7c1f17;
+  margin: 1em;
+  padding: 2em;
+}
