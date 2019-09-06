@@ -98,11 +98,8 @@ function showDetails(data) {
     modal.querySelector(".modal-allergens").textContent = `Allergens: ${data.allergens}`;
     };
 
-    modal.querySelector(".rate").textContent = data.stars;
-
-
-
-
+    console.log(modal.querySelector(".modal-image"));
+    modal.querySelector(".modal-image").src = `../images/small/${data.image}-sm.jpg`;
 
 
 
