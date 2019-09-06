@@ -56,17 +56,28 @@ function showDish(dish) {
 
 
     console.log(copy.querySelector(".imgsmall"));
-    copy.querySelector(".imgsmall").src = `../images/small/${dish.image}-sm.jpg`;
+    copy.querySelector(".imgsmall").src = `../static_restaurant/images/small/${dish.image}-sm.jpg`;
 
+
+    if(dish.soldout){
+       console.log(dish.soldout); copy.querySelector(".imgsmall").classList.toggle("soldout");
+    copy.querySelector(".soldout_img").classList.remove("d-none");
+    }
 
     copy.querySelector("button").addEventListener("click", () => {
         fetch(`https://kea-alt-del.dk/t5/api/product?id=${dish.id}`)
             .then(res => res.json())
             .then(showDetails);
+
+
     });
 
 
-    const link = document.createElement("a");
+//    const link = document.createElement("a");
+
+
+
+
 
 
     document.querySelector(`#${dish.category}`).appendChild(copy);
@@ -92,11 +103,16 @@ function showDetails(data) {
     };
 
     modal.querySelector(".modal-allergens").textContent = data.allergens;
-    if(!data.allergens){
-        modal.querySelector(".modal-allergens").textContent = `Allergens: ${data.allergens}-`;
+    if(data.allergens < 1){
+        modal.querySelector(".modal-allergens").style.hidden;
     } else {
     modal.querySelector(".modal-allergens").textContent = `Allergens: ${data.allergens}`;
-    }
+    };
+
+    console.log(modal.querySelector(".modal-image"));
+    modal.querySelector(".modal-image").src = `../static_restaurant/images/small/${data.image}-sm.jpg`;
+
+
 
 
 
