@@ -56,7 +56,7 @@ function showDish(dish) {
 
 
     console.log(copy.querySelector(".imgsmall"));
-    copy.querySelector(".imgsmall").src = `../images/small/${dish.image}-sm.jpg`;
+    copy.querySelector(".imgsmall").src = `../static_restaurant/images/small/${dish.image}-sm.jpg`;
 
 
     if(dish.soldout){
@@ -110,7 +110,7 @@ function showDetails(data) {
     };
 
     console.log(modal.querySelector(".modal-image"));
-    modal.querySelector(".modal-image").src = `../images/small/${data.image}-sm.jpg`;
+    modal.querySelector(".modal-image").src = `../static_restaurant/images/small/${data.image}-sm.jpg`;
 
 
 
