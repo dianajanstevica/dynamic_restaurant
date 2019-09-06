@@ -92,11 +92,17 @@ function showDetails(data) {
     };
 
     modal.querySelector(".modal-allergens").textContent = data.allergens;
-    if(!data.allergens){
-        modal.querySelector(".modal-allergens").textContent = `Allergens: ${data.allergens}-`;
+    if(data.allergens < 1){
+        modal.querySelector(".modal-allergens").style.hidden;
     } else {
     modal.querySelector(".modal-allergens").textContent = `Allergens: ${data.allergens}`;
-    }
+    };
+
+    modal.querySelector(".rate").textContent = data.stars;
+
+
+
+
 
 
 
