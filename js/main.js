@@ -59,14 +59,25 @@ function showDish(dish) {
     copy.querySelector(".imgsmall").src = `../images/small/${dish.image}-sm.jpg`;
 
 
+    if(dish.soldout){
+       console.log(dish.soldout); copy.querySelector(".imgsmall").classList.toggle("soldout");
+    copy.querySelector(".soldout_img").classList.remove("d-none");
+    }
+
     copy.querySelector("button").addEventListener("click", () => {
         fetch(`https://kea-alt-del.dk/t5/api/product?id=${dish.id}`)
             .then(res => res.json())
             .then(showDetails);
+
+
     });
 
 
-    const link = document.createElement("a");
+//    const link = document.createElement("a");
+
+
+
+
 
 
     document.querySelector(`#${dish.category}`).appendChild(copy);
@@ -100,6 +111,8 @@ function showDetails(data) {
 
     console.log(modal.querySelector(".modal-image"));
     modal.querySelector(".modal-image").src = `../images/small/${data.image}-sm.jpg`;
+
+
 
 
 

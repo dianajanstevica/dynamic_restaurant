@@ -169,3 +169,35 @@ html {
     padding-left: calc(50% - 250px/2);
 }
 
+.soldout {
+   filter:grayscale();
+
+
+
+
+}
+
+.p-absolute {
+    position: absolute;
+
+}
+
+.d-none {
+      display: none;
+}
+
+.dishsec {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.dishsec>.name {
+    text-align: center;
+}
+
+button {
+    font-family: 'Manjari', sans-serif;
+    background-color: burlywood;
+    padding: 5px;
+}
